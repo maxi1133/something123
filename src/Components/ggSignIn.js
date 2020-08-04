@@ -5,7 +5,7 @@ import "firebase/storage";
 
 import { firebase } from "../firebase/firebase";
 // eslint-disable-next-line
-import { lan1 } from "../redux/actions/actions";
+// import { lan1 } from "../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 export function Ggsingin(props) {
@@ -18,7 +18,7 @@ export function Ggsingin(props) {
     e.preventDefault();
 
     for (let index = 0; index < 50; index++) {
-      dispatch(lan1(index * 3));
+      // dispatch(lan1(index * 3));
     }
   };
 
