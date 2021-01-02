@@ -1,10 +1,11 @@
-.sidebar{
+.sidebar
+{
     top: 0;
     left: 0;
     position: fixed;
     height: 100%;
     border: 1px solid;
-    width: 150px;
+    min-width : 10%;
     
 }
 
@@ -12,9 +13,8 @@
 
 
 
-
-main {
-    margin-left: 150px;
-    border: 1px solid;
-    height: 100%;
+main 
+{
+    padding-left: 10%;
+    
 }

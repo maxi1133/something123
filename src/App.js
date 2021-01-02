@@ -1,22 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 
 import NavAdmin from "./Components/Admin/NavAdmin/NavAdmin";
 import NavGuest from "./Components/Guest/NavGuest/NavGuest";
 
-const App = () => {
-  
+
+const App = () => 
+{
   return (
-      <Router>
-        <Switch  >
+      <BrowserRouter>
+        <Switch >
           
-          <Route path="/Admin" component={NavAdmin} />
-          <Route exact path='' component={NavGuest} />
           
+          <Route path="/Admin" component={ NavAdmin } />
+          <Route path='/' component={ NavGuest } />
+
+
         </Switch>
-      </Router>
+      </BrowserRouter>
   )
-};
+}
 
 export default App;

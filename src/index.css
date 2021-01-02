@@ -10,7 +10,7 @@ code {
 }
 
 html , body , body #root{
-  height: 100%;
+  /* height: 100%; */
   margin: 0;
   font-family: proxima-nova,sans-serif;
   font-size: 14px;

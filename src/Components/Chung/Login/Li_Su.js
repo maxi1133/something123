@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./login.css";
 import { Link, Redirect } from "react-router-dom";
-import { firebase } from "../../firebase/firebase";
+import { firebase } from "../../../firebase/firebase";
+import Axios from "axios";
 
 class Li_Su extends Component {
   constructor(props) {
@@ -81,11 +82,17 @@ class Li_Su extends Component {
   DangNhap = (e) => {
     e.preventDefault()
     if (this.props.adminLogging) {
-      console.log("admin dang nhap");
-      this.props.AdminLogIn(document.getElementById('TK').value,document.getElementById('MK').value)
+      // console.log("admin dang nhap");
+      console.log(this.props.AdminLogIn(document.getElementById('TK').value,document.getElementById('MK').value))
 
     } else {
-      console.log("user dang nhap");
+      // console.log("user dang nhap");
+      Axios.post('http://10.203.230.102:3001/users/signin',{
+        userName : document.getElementById('TK').value.trim(),
+        password : document.getElementById('MK').value.trim(),
+      }).then(res => {
+        console.log(res.data.token)
+      })
     }
   };
 
@@ -103,7 +110,7 @@ class Li_Su extends Component {
           </div>
 
           <div>
-            <input type='password' placeholder="mật khẩu" id='MK' />
+            <input type='text' placeholder="mật khẩu" id='MK' />
           </div>
 
           <div>
